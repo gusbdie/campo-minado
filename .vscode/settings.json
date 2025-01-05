@@ -1,8 +1,12 @@
 {
-    "java.project.sourcePaths": ["src"],
+    "java.project.sourcePaths": [
+        "src",
+        "test"
+    ],
     "java.project.outputPath": "bin",
     "java.project.referencedLibraries": [
-        "lib/**/*.jar"
+        "c:\\Users\\Gustavo\\OneDrive\\Área de Trabalho\\minesweeper\\campo_minado\\lib\\junit-platform-console-standalone-1.11.4.jar"
     ],
-    "git.ignoreLimitWarning": true
+    "git.ignoreLimitWarning": true,
+    "java.dependency.packagePresentation": "hierarchical"
 }
