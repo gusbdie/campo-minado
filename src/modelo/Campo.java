@@ -20,12 +20,12 @@ public class Campo {
     }
 
     boolean adicionarVizinho(Campo vizinho){
-        boolean linhaDiferente = linha != vizinho.linha;
-        boolean colunaDiferente = coluna != vizinho.coluna;
+        boolean linhaDiferente = this.linha != vizinho.linha;
+        boolean colunaDiferente = this.coluna != vizinho.coluna;
         boolean diagonal = linhaDiferente && colunaDiferente;
 
-        int valorLinha = Math.abs(linha - vizinho.linha);
-        int valorColuna = Math.abs(coluna - vizinho.coluna);
+        int valorLinha = Math.abs(this.linha - vizinho.linha);
+        int valorColuna = Math.abs(this.coluna - vizinho.coluna);
         int valorGeral = valorColuna + valorLinha;
 
         if(valorGeral == 1 && !diagonal){
