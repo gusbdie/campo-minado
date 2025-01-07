@@ -3,14 +3,16 @@ package modelo;
 import java.util.ArrayList;
 import java.util.List;
 
+import excecao.ExplosaoException;
+
 public class Campo {
 
     private final int linha;
     private final int coluna;
 
-    //private boolean aberto;
-    //private boolean minado;
-    //private boolean marcado;
+    private boolean aberto;
+    private boolean minado;
+    private boolean marcado;
 
     private List<Campo> vizinhos = new ArrayList<>();
 
@@ -36,5 +38,22 @@ public class Campo {
         }else{
             return false;
         }
+    }
+
+    void alternarMarcado(){
+        if(!aberto){
+            marcado = !marcado;
+        }
+    }
+
+    boolean abrir(){
+        if(!aberto && !marcado){
+            aberto = true;
+
+            if(minado){
+                throw new ExplosaoException();
+            }
+        }
+        return false;
     }
 }
