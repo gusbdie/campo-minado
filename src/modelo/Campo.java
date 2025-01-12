@@ -34,6 +34,7 @@ public class Campo {
             vizinhos.add(vizinho);
             return true;
         }else if(valorGeral == 2 && diagonal){
+            vizinhos.add(vizinho);
             return true;
         }else{
             return false;
@@ -56,8 +57,10 @@ public class Campo {
             if(vizinhancaSegura()){
                 vizinhos.forEach(v -> v.abrir());
             }
+            return true;
+        }else{
+            return false;
         }
-        return false;
     }
 
     boolean vizinhancaSegura(){
@@ -66,5 +69,17 @@ public class Campo {
 
     public boolean isMarcado(){
         return marcado;
+    }
+
+    void minar(){
+        minado = true;
+    }
+
+    public boolean isAberto(){
+        return aberto;
+    }
+
+    public boolean isFechado(){
+        return !isAberto();
     }
 }
