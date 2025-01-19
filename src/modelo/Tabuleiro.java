@@ -84,8 +84,20 @@ public class Tabuleiro {
         StringBuilder sb = new StringBuilder();
         //usada para um grande número de concatenação de Strings
 
+        sb.append(" ");
+        sb.append(" ");
+        for(int c = 0; c < colunas; c++){
+            sb.append(" ");
+            sb.append(c);
+            sb.append(" ");
+        }
+    
+        sb.append("\n");
+
         int i =0;
         for(int linha = 0; linha < linhas; linha++){
+            sb.append(linha);
+            sb.append(" ");
             for(int coluna = 0; coluna < colunas; coluna++){
                 sb.append(" ");
                 sb.append(campos.get(i));
